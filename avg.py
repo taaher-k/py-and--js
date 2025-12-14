@@ -2,12 +2,18 @@ def collect_marks():
     y = []
     count = 1
 
-    try:
-        subject = int(input("Enter number of subjects: "))
-    except ValueError:
-        print("Invalid input! Please enter a valid integer for number of subjects.")
-        return []   # return empty list if input fails
+    # Keep asking until a valid integer for subjects is entered
+    while True:
+        try:
+            subject = int(input("Enter number of subjects: "))
+            if subject <= 0:
+                print("Number of subjects must be greater than 0. Try again.")
+                continue
+            break   # valid input, exit loop
+        except ValueError:
+            print("Invalid input! Please enter a valid integer for number of subjects.")
 
+    # Now collect marks for each subject
     for x in range(subject):
         while True:  # keep asking until valid marks are entered
             try:
