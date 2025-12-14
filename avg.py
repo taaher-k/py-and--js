@@ -6,8 +6,8 @@ def collect_marks():
     while True:
         try:
             subject = int(input("Enter number of subjects: "))
-            if subject <= 0:
-                print("Number of subjects must be greater than 0. Try again.")
+            if subject <= 0 or subject > 100:
+                print("Number of subjects must be greater than 0 and lesser than 100 Try again.")
                 continue
             break   # valid input, exit loop
         except ValueError:
@@ -21,7 +21,11 @@ def collect_marks():
                 if marks < 0 or marks > 100:
                     print("Marks should be between 0 and 100. Try again.")
                     continue
+                
                 y.append(marks)
+                #y = [*y, marks]  # using unpacking to add marks to the list
+                #y += [marks]  # another way to add marks to the list
+                
                 break
             except ValueError:
                 print("Invalid input! Please enter a valid integer for marks.")
