@@ -1,7 +1,7 @@
 #1. Polymorphism
 #Meaning: Same method name, different behavior depending on the object.
 
-#Example:
+#Example:  
 
 
 class Animal:
