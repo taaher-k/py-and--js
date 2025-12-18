@@ -221,3 +221,277 @@ print(list(reversed(f)))
 #same same but different end
 
 
+#4.1
+
+list_numbers = [10, 25, 5, 75, 60, 45, 90, 15, 30,150,50]
+
+def max_num(x):
+    max_value = x[0]
+    for num in x:
+        if num > max_value:
+            max_value = num
+
+    return max_value
+
+
+def second_max(x):
+    first_max = max_num(x)
+    second_max_value = x[0]
+    for num in x:
+        if num < first_max and num > second_max_value:
+            second_max_value = num
+    return second_max_value
+
+print("Maximum number is:", max_num(list_numbers))
+print("Second maximum number is:", second_max(list_numbers)) 
+
+
+def add(a,b):
+    return a + b
+
+
+def sub(a,b):
+    return a - b
+
+
+def mul(a,b):
+    return a * b
+
+
+def div(a,b):
+    return a / b
+
+
+def moules(a,b):
+    return a % b
+
+def floor_div(a,b):
+    return a // b
+
+def power(a,b):
+    return a ** b
+
+print("Addition:", add(10, 5))
+print("Subtraction:", sub(10, 5))
+print("Multiplication:", mul(10, 5))
+print("Division:", div(10, 5))
+print("Modulus:", moules(10, 5))
+print("Floor Division:", floor_div(10, 5))
+print("Power:", power(10, 5))
+
+xlist = [10, 5]
+ylist = [2, 0]
+
+
+def calculator(x, y, operation):
+    match operation:
+        case "add":
+            return add(x, y)
+        case "sub":
+            return sub(x, y)
+        case "mul":
+            return mul(x, y)
+        case "div":
+            return div(x, y)
+        case "moules":
+            return moules(x, y)
+        case "floor_div":
+            return floor_div(x, y)
+        case "power":
+            return power(x, y)
+        case _:
+            return "Invalid operation"
+
+print("Addition:", calculator(sum(xlist), sum(ylist), "add"))
+
+
+bill_amount =35000
+
+gst = 18
+
+numnber_of_EMIs = 6
+
+def emi_calculator(bill, gst_rate, num_emis):
+    total_bill = bill + (bill * gst_rate / 100)
+    emi_amount = total_bill / num_emis
+    return total_bill, emi_amount
+
+print("Total Bill and EMI Amount:", emi_calculator(bill_amount, gst, numnber_of_EMIs))
+
+
+def read_to_digi():
+    input_num = input("Enter a number: ")
+    cond = [int(c) for c in input_num]
+    #con = list(input_num)
+    #cond = list(map(int,con))
+    #cond = [int(c)for c in con]
+ 
+    return cond
+print("Digits are:", (read_to_digi()))
+
+#4.2
+
+
+
+def avg_marks(sudent_name, *marks):
+    total = sum(marks)
+    average = total / len(marks)
+    return f"Student: {sudent_name}, Average Marks: {average}"
+print(avg_marks("Taaher", 85, 90, 78, 92, 88))
+
+
+
+def student_info(name, age, **kwargs):
+    info = f"Name: {name}, Age: {age}"
+    for key, value in kwargs.items():
+        info += f", {key}: {value}"
+    return info
+print(student_info("Taaher", 22, City="Chennai", Course="Engineering"))
+
+
+
+def factorial(n):
+    # Base case
+    if n == 0 or n == 1:
+        return 1
+    # Recursive case
+    else:
+        return n * factorial(n - 1)
+
+# Example usage
+print(factorial(5))  # Output: 120
+
+
+
+
+def sum_of_digits(n):
+    # Base case
+    if n == 0:
+        return 0
+    # Recursive case
+    else:
+        return (n % 10) + sum_of_digits(n // 10)
+
+# Example usage
+print(sum_of_digits(1234),"this is the last digit from 1234 by using num % 10 ",1234%10,"this is the last digit removed from 1234 by using num // 10 ",1234//10)  # Output: 10
+
+def fibonacci(n):
+    # Base case
+    if n <= 0:
+        return []  
+    elif n == 1:
+        return [0]
+    elif n == 2:
+        return [0, 1]
+    # Recursive case
+    else:
+        fib_sequence = fibonacci(n - 1)
+        next_value = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_value)
+        return fib_sequence
+    
+print(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+
+# Generator function for Fibonacci sequence
+def fibonacci(n):
+    a, b = 0, 1
+    while a <= n:
+        yield a
+        a, b = b, a + b
+
+# Example usage
+if __name__ == "__main__":
+    n = int(input("Enter the limit (n): "))
+    print(f"Fibonacci numbers up to {n}:")
+    for num in fibonacci(n):
+        print(num, end=" ")
+ 
+def fibo():
+    n = int(input("Enter the number of terms in Fibonacci sequence: "))
+    for x in range(n):
+       a,b = 0,1
+       if a <= n:
+         a, b = b, a + b
+       print(x,a,b)
+
+print(fibo())
+
+# Generator function to reverse a string
+def reverse_string(text):
+    index = len(text) - 1
+    while index >= 0:
+        yield text[index]
+        index -= 1
+
+# Example usage
+if __name__ == "__main__":
+    input_str = input("Enter a string: ")
+    print("Reversed string:")
+    for char in reverse_string(input_str):
+        print(char, end="")
+           
+        
+def rev(n):
+    for i in  n [::-1]:
+        yield i
+n = input("enter the string")
+r= rev(n)
+print ("reversed string")
+
+for i in r:
+    print(i,end=" ")        
+
+# 2
+
+def reverse_string_gen(s):
+    for i in range(len(s) - 1, -1, -1):
+        yield s[i]
+
+# Example usage
+text = "Taaher"
+print(f"Reversed string of '{text}':")
+for char in reverse_string_gen(text):
+    print(char, end="")
+
+
+#3
+
+name = "aftab"
+namerev = []
+
+for x in range(len(name)-1,-1,-1):
+    namerev.append(name[x])
+
+print( "".join(namerev))
+
+"""
+tr = "Taaher"
+def revs(tr):
+    for i in x(len(tr)-1,-1,-1):
+     yield tr[i]
+
+for j in revs(tr):
+    print(j,end="")
+
+    error because x is looks like a function 
+"""
+
+
+
+def genrev(x):
+    for i in x[::-1]:
+        yield i
+
+for y in genrev("Taaher"):
+   #print("Reversed string:",y,end="")  do not add any things when you print yielded value expect the value and use end="" to avoid new line
+   print(y,end="")
+
+
+# Option 1: Using a for loop
+print("Reversed string:", end=" ")
+for j in genr   ev("Taaher"):
+    print(j, end="")
+
+# Option 2: Collect into a string
+print("\nReversed string:", "".join(genrev("Taaher")))
