@@ -490,7 +490,7 @@ for y in genrev("Taaher"):
 
 # Option 1: Using a for loop
 print("Reversed string:", end=" ")
-for j in genr   ev("Taaher"):
+for j in genrev("Taaher"):
     print(j, end="")
 
 # Option 2: Collect into a string
