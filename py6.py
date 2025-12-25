@@ -56,7 +56,7 @@ for i in range(len(nums)):
 
 print("Ascending order:", nums)
 
-
+ 
 
 
 
@@ -75,6 +75,8 @@ for i in range(len(nums)):
 print("Ascending order:", nums)
 
 
+
+ 
 #
 
 def reverse_words(sentence):
@@ -90,11 +92,19 @@ s = input("Enter a string: ")
 print("Reversed words:", reverse_words(s))
 
 
+
+
+
+
+
 #non rep 
 nums = [15, 5, 78, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 16, 2, 9]
 
 non_repeated = [n for n in nums if nums.count(n) == 1]
 print("Non-repeated elements:", non_repeated)
+
+
+
 
 
 #all pairs of sum in list 
@@ -117,7 +127,11 @@ print("Pairs with sum present in list:")
 for a, b, s in result:
     print(f"{a} + {b} = {s}")
 
+#end 6.1
 
+
+
+#6.2
 #anagram
 def is_anagram(str1, str2):
     # Remove spaces and convert to lowercase
@@ -135,3 +149,20 @@ if is_anagram(s1, s2):
     print("The strings are anagrams.")
 else:
     print("The strings are not anagrams.")
+
+   
+
+
+
+
+
+
+numss = [15, 5, 78, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 16]
+num = sorted(numss)
+print(num)
+
+
+c = int(input("enter any number :"))
+
+print (f"the {c} th maximum number from the list is : {num[c*-1]}")
+
