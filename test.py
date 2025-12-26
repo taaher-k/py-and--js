@@ -3,9 +3,9 @@ c = "1 684 456 684 786 64"
 
 cl = c.split(" ")
 
-intlist = [int(x)for x in cl ]
+inrlist = [int(x)for x in cl ]
 
-print(type(intlist))
+print(type(inrlist))
 print(type(c))
 print(type(cl))
 
@@ -130,7 +130,7 @@ def find_longest_string_from_a_list(x):
     return longest        
 print(f"the longest number is in the list is {find_longest_string_from_a_list(strings)}")
 
-str = "mom"
+strt = "mom"
 
 def pal(x):
     if not x:
@@ -143,7 +143,7 @@ def pal(x):
          False  
 
 
-print(f"{pal(str)}")
+print(f"{pal(strt)}")
 
 
 
@@ -154,6 +154,7 @@ def find_and_replace(original, find_val, replace_val):
     while i < len(original):
         # Check if substring starting at i matches find_val
         match = True
+
         for j in range(len(find_val)):
             if i + j >= len(original) or original[i + j] != find_val[j]:
                 match = False
@@ -170,5 +171,178 @@ def find_and_replace(original, find_val, replace_val):
 
 
 # Example
-text = "hello world, hello python"
+text = "`hello world, hello python"  
 print(find_and_replace(text, "hello", "hi"))
+
+
+
+
+
+
+def rp(current_value,search_val,rp_val):
+    out = ""
+    x = 0
+
+    while x  < len(current_value): #range 0 to len(current_value)
+
+        match = True
+        
+        for i in range(len(search_val)):   #range 0 to len(search_val)
+
+            if x + i >= len(current_value) or current_value[x+i] != search_val[i]: 
+            #count + i >= en(current_value) or current_value[count+i] != search_val[i]
+
+                match = False
+                break
+         
+        if match:
+            out += rp_val          #important string will not support .append so we use += .append is a list attribute
+            x += len(search_val)
+        else:
+
+            out += current_value[x]
+            x += 1
+    return out
+
+sample_string = "hi taaher how are you"
+sample_string2 ="taaher just start it "
+
+print(rp(sample_string,"taaher","khan"))
+print(rp(sample_string2,"taaher","khan"))
+
+
+
+def represent_powers(n):
+    results = []
+    for base in range(2, n):
+        exp = 2
+        value = base ** exp
+
+        while value <= n:
+
+            if value == n:
+                results.append(f"{base}^{exp}")
+                break
+            exp += 1
+            value = base ** exp
+
+    return results if results else "false"
+print(represent_powers(64))  # ['2^6', '4^3', '8^2']
+print(represent_powers(20))  # FLASE
+
+
+strrr = "hi hello how are you who are where are you!?"
+def faodd(x):
+    for i in range (1,len(x),+2):
+
+        print(strrr[i]," ",end="")
+
+faodd(strrr)
+
+
+print()
+
+for x in range (0,100):
+    if x %2 !=0:
+        print(x," ",end="")
+
+
+
+def is_niven(n):
+
+        digit_sum = sum(int(d) for d in str(n))
+        if n % digit_sum == 0:   # divisible check
+         return True
+        else:
+         return False
+
+print(is_niven(18))  # True
+print(is_niven(15))  # False
+
+
+
+
+
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def filter_primes(lst):
+    primes = []
+    for x in lst:
+        if is_prime(x):
+            primes.append(x)
+    return primes
+
+# Example usage
+numbers = [10, 2, 3, 4, 5, 15, 17, 20, 23]
+print(filter_primes(numbers))  # Output: [2, 3, 5, 17, 23]
+
+
+"""#3
+
+#1
+
+
+def fibonacci_upto(limit):
+    a, b = 0, 1
+    fib_list = []
+    while a <= limit:
+        fib_list.append(a)
+        a, b = b, a + b   # update values
+    
+    p = len(fib_list)-1
+
+    if fib_list[p]==limit:
+            return "its a fibonacci"
+    else:
+            return "not a fibonacci"
+
+
+num = int(input("enter any number to check its fibonacci or not"))
+print(fibonacci_upto(num))
+
+
+
+#2
+def fibonacci_upto(limit):
+    a, b = 0, 1
+    fib_list = []
+    while a <= limit:
+        fib_list.append(a)
+        a, b = b, a + b   # update values
+    
+    if limit in fib_list:   # check membership in the whole list
+        return "its a fibonacci"
+    else:
+        return "not a fibonacci"
+
+num = int(input("enter any number to check its fibonacci or not: "))
+print(fibonacci_upto(num))
+
+
+"""
+
+"""#Find the Factorial of a given number.
+
+
+def factorial(n):
+    if n < 0:
+        return "Factorial not defined for negative numbers"
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, n+1):
+            result *= i
+        return result
+
+# Example
+num = int(input("Enter a number: "))
+print(f"Factorial of {num} is {factorial(num)}")"""
+
