@@ -1,0 +1,24 @@
+<h2>Inventory Management</h2>
+
+<div>
+  <input [(ngModel)]="newProduct.iid" placeholder="Product ID">
+  <input [(ngModel)]="newProduct.iname" placeholder="Name">
+  <input [(ngModel)]="newProduct.icategory" placeholder="Category">
+  <input [(ngModel)]="newProduct.price" placeholder="Price" type="number">
+  <input [(ngModel)]="newProduct.quantity" placeholder="Quantity" type="number">
+  <button (click)="addProduct()">Add Product</button>
+</div>
+
+<table>
+  <tr>
+    <th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Quantity</th><th>Actions</th>
+  </tr>
+  <tr *ngFor="let p of products">
+    <td>{{p.iid}}</td>
+    <td>{{p.iname}}</td>
+    <td>{{p.icategory}}</td>
+    <td>{{p.price}}</td>
+    <td>{{p.quantity}}</td>
+    <td><button (click)="deleteProduct(p.iid)">Delete</button></td>
+  </tr>
+</table>
