@@ -64,6 +64,12 @@ def delete_product(iid: int):
         return {"message": "Product deleted successfully!"}
     raise HTTPException(status_code=404, detail="Product not found")
 
+
+
+
+
+
+
 # Serve static files (HTML, CSS, JS)
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
