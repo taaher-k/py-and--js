@@ -16,7 +16,222 @@
 <input id="ageinput" type="number">
 <button type="submit" onclick = "checkAge()">submit</button>
 
+
+
+
+
+
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+
+
+
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo1">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo1').style.fontSize='35px'">Click Me!</button>
+
+
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo2">JavaScript can change HTML content.</p>
+
+<button type="button" onclick="document.getElementById('demo2').innerHTML = 'Hello JavaScript!'">Click Me!</button>
+
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo3">JavaScript can hide HTML elements.</p>
+
+<button type="button" onclick="document.getElementById('demo3').style.display='none'">Click Me!</button>
+
+
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can show hidden HTML elements.</p>
+
+<p id="demo4" style="display:none">Hello JavaScript!</p>
+
+<button type="button" onclick="document.getElementById('demo4').style.display='block'">Click Me!</button>
+
+
+
+<!--example for internal js-->
+<h2>JavaScript in Body</h2>
+
+<p id="demo5"></p>
+
+<script>
+document.getElementById("demo5").innerHTML = "My First JavaScript";
+</script>
+
+
+
+<!--  <!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+</script>
+</head>
+<body>
+<h2>Demo JavaScript in Head</h2>
+
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+</html>
+
+in this code we implemented the js in head and it worked 
+
+in innerHTML we can overwrite the html
+in innerText we can only able to change the text
+
+-->
+
+
+
+
+<h2>Demo JavaScript in Body</h2>
+
+<p id="demo6">A Paragraph.</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  document.getElementById("demo6").innerHTML = "Paragraph changed.";
+}
+</script>
+
+
+<h2>My First Web Page</h2>
+<p>My first paragraph.</p>
+
+<p>Never call document.write after the document has finished loading.
+It will overwrite the whole document.</p>
+
+<script>
+document.write(5 + 6);
+</script>
+
+
+
+<h2>My First Web Page</h2>
+<p>My first paragraph.</p>
+
+<button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+
+
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+
+<script>
+window.alert(5 + 6);
+</script>
+
+<h2>The window.print() Method</h2>
+
+<p>Click the button to print the current page.</p>
+
+<button onclick="window.print()">Print this page</button>
+
+
+
+<h1>JavaScript Syntax</h1>
+<h3>The let and const keywords create variables</h3>
+
+<p id="demo7"></p>
+
+<script>
+let x = 5;
+const fname = "John";
+
+document.getElementById("demo7").innerHTML = fname + " is " + x + " years old.";
+</script>
+
+
+
+
+
+
+
+
+<h1>JavaScript Statements</h1>
+
+<p>A JavaScript <b>program</b> is a list of <b>statements</b> to be executed by a computer.</p>
+
+<p id="demo8"></p>
+
+<script>
+
+let b, y, z;  // Statement 1
+x = 5;        // Statement 2
+y = 6;        // Statement 3
+z = b + y;    // Statement 4
+
+document.getElementById("demo8").innerHTML = "The value of z is " + z;  
+</script>
+
+
+
+
+
+<h1>JavaScript Statements</h1>
+
+<p>JavaScript code blocks are written between { and }</p>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<p id="demo9"></p>
+<p id="demo10"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo9").innerHTML = "Hello Dolly!";
+  document.getElementById("demo10").innerHTML = "How are you?";
+}
+</script>
+
+
+
+
+<h1>JavaScript Variables</h1>
+
+<p>Strings are written with quotes.</p>
+<p>Numbers are written without quotes.</p>
+
+<p id="demo11"></p>
+
+<script>
+const pi = 3.14;
+let person = "John Doe";
+let answer = 'Yes I am!';
+
+document.getElementById("demo11").innerHTML = pi + "<br>" + person + "<br>" + answer;
+</script>
+
 <script src="script.js"></script>
+
 
 </body>
 </html>
