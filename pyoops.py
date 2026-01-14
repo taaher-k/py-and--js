@@ -2,6 +2,38 @@
 #Meaning: Same method name, different behavior depending on the object.
 
 #Example:  
+def factorial_iterative(n):
+    if n < 0:
+        return "Invalid: Negative numbers"
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+print(factorial_iterative(5))  # 120
+
+
+def fibonacci_iterative(n):
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+print(fibonacci_iterative(7))  # 13
+
+
+def fibonacci_sequence(n):
+    sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+
+print(fibonacci_sequence(8))  # [0, 1, 1, 2, 3, 5, 8, 13]
+
 
 
 class Animal:

@@ -100,6 +100,7 @@ print(next(rty))
 print(next(rty))
 print(next(rty))
 
+
 tyr = "TAaher"#input("e").lower()
 
 count = 0
@@ -116,6 +117,8 @@ print(f"Total vowels in {tyr} are {count} and the vowels are {volwels_list}")
 
 text = "Aftab"#input("Enter a string: ")
 count = sum(1 for char in text if char.lower() in "aeiou")
+volwels_list2 = [char for char in text if char.lower() in "aeiou"]
+print(f"Vowels in '{text}': {volwels_list2}")
 print("Number of vowels:", count)
 
 
@@ -350,6 +353,7 @@ print(student_info("Taaher", 22, City="Chennai", Course="Engineering"))
 
 
 
+
 def factorial(n):
     # Base case
     if n == 0 or n == 1:
@@ -413,7 +417,7 @@ def fibo():
        a,b = 0,1
        if a <= n:
          a, b = b, a + b
-       print(x,a,b)
+       print(x,a,b,end="")
 
 print(fibo())
 

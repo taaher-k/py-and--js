@@ -1,0 +1,124 @@
+
+
+<!---JavaScript DOM events capture user actions and system changes for interactive web apps. Common ones include mouse clicks, key presses, and form inputs—key for fullstack interviews. Use addEventListener('event', handler) to attach them.
+​
+
+Mouse Events
+These trigger on mouse interactions:
+
+click: Single left-click on element.
+
+dblclick: Double-click.
+
+mouseover: Mouse enters element.
+
+mouseout: Mouse leaves element.
+
+mousedown: Button pressed.
+
+mouseup: Button released.
+
+mousemove: Mouse moves over element.
+​
+
+Keyboard Events
+Fired on key input:
+
+keydown: Any key pressed down.
+
+keyup: Key released.
+
+keypress: Key pressed (deprecated; use keydown).
+​
+
+Form Events
+Handle input changes:
+
+submit: Form sent (prevents default with e.preventDefault()).
+
+change: Value altered (e.g., select dropdown).
+
+input: Real-time typing in fields.
+
+focus: Element gains focus.
+
+blur: Element loses focus.
+
+reset: Form reset button clicked.
+​
+
+Window/Document Events
+Page-level triggers:
+
+load: Page fully loaded.
+
+resize: Window resized.
+
+scroll: Scrolling occurs.
+
+unload: Page closing (avoid heavy use).
+​
+
+Drag/Drop Events
+For draggable elements:
+
+dragstart: Drag begins.
+
+drag: Dragging over surface.
+
+dragend: Drag stops.
+
+drop: Item dropped.
+
+dragover: Over drop target.
+​
+
+list out example code for all the events
+JavaScript events trigger code on user actions via addEventListener(). Below are practical code examples for all major DOM events listed previously, ready to copy-paste into HTML/JS for your interview coding rounds. Test in browser console or files.
+​Practice: document.addEventListener('keydown', e => console.log(e.key)); for interview coding rounds.
+
+
+​--->
+<!-----//Mouse Events Examples-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<button id="clickBtn">Click Me</button>
+<div id="log"></div>
+<script>
+const btn = document.getElementById('clickBtn');
+const log = document.getElementById('log');
+
+// click
+btn.addEventListener('click', () => log.textContent += 'Clicked! ');
+
+// dblclick  
+btn.addEventListener('dblclick', () => log.textContent += 'Double-clicked! ');
+
+// mouseover/mouseout
+btn.addEventListener('mouseover', () => btn.style.background = 'yellow');
+btn.addEventListener('mouseout', () => btn.style.background = '');
+
+// mousedown/mouseup
+btn.addEventListener('mousedown', () => log.textContent += 'Mouse down! ');
+btn.addEventListener('mouseup', () => log.textContent += 'Mouse up! ');
+
+// mousemove (on document)
+document.addEventListener('mousemove', (e) => log.textContent += `X:${e.clientX} `);
+</script>
+
+
+
+
+
+</body>
+</html>
+
+

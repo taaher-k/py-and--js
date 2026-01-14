@@ -13,6 +13,28 @@ nums.sort()
 print("Ascending order:", nums)
 
 
+def is_anagram(str1, str2):
+    # Remove spaces and convert to lowercase
+    str1 = str1.replace(" ", "").lower()
+    str2 = str2.replace(" ", "").lower()
+
+    # Compare sorted characters
+    if sorted(str1) == sorted(str2):
+        print("The strings are anagrams.")
+    else:   
+        print("The strings are not anagrams.")
+
+is_anagram("listen", "silent")
+
+
+
+v = "listen"
+d = "silent"
+print(sorted(v) == sorted(d))  # True   
+
+
+
+
 #2. Find maximum and second maximum number from a list.
 
 nums = [15, 5, 78, 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 16]

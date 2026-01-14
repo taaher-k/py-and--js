@@ -7,6 +7,95 @@ print("world","taaher",sep="***")
 print("python\nprogramming")
 
 
+
+
+n=int(input())
+if n>1:
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            print("Not Prime")
+            break
+    else:
+        print("Prime")
+else:
+    print("Not Prime")
+
+
+
+def char_frequency(s):
+    freq = {}
+    
+    # Count frequency
+    for char in s:
+        freq[char] = freq.get(char, 0) + 1
+    
+    # Print only duplicates (frequency > 1)
+    print("Character frequencies:")
+    for char, count in freq.items():
+        if count > 1:
+            print(f"'{char}': {count}")
+    
+    return freq
+
+# Test cases they'll expect
+print("Test 1:")
+char_frequency("hello")  
+# Output: 'l': 2
+
+print("\nTest 2:")
+char_frequency("programming") 
+# Output: 'r': 2, 'g': 2, 'm': 2
+
+
+
+# Method 2: Counter (professional)
+from collections import Counter
+def freq_counter(s):
+    counts = Counter(s)
+    duplicates = {k: v for k, v in counts.items() if v > 1}
+    return duplicates
+
+# Method 3: List duplicates
+def find_duplicates(lst):
+    seen = set()
+    duplicates = []
+    for item in lst:
+        if item in seen and item not in duplicates:
+            duplicates.append(item)
+        seen.add(item)
+    return duplicates
+
+
+def can_sort_one_swap(arr):
+    sorted_arr = sorted(arr)
+    diff_count = 0
+    swap_pos = []
+    
+    for i in range(len(arr)):
+        if arr[i] != sorted_arr[i]:
+            diff_count += 1
+            swap_pos.append(i)
+    
+    # 0 differences = already sorted
+    # 2 differences = one swap needed
+    return diff_count in [0, 2]
+
+# Test
+print(can_sort_one_swap([1,3,2,4]))  # True
+print(can_sort_one_swap([1,2,4,3]))  # True  
+print(can_sort_one_swap([1,4,3,2]))  # False
+
+
+
+
+
+
+
+
+
+
+
+
 s = "aabbcc"
 print("".join(set(s)))
 
@@ -272,7 +361,8 @@ for x in range(subject):
     y.append(marks)
     count += 1
     
-print (f"Your marks are: {y}")
+    
+print(f"Your marks are: {y}")
 
 
 
@@ -282,5 +372,4 @@ def find_average_list(numbers):
 
 
 print(f"Your average marks are: {find_average_list(y)}")
-
 
